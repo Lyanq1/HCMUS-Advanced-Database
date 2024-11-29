@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Form1
+    partial class fLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,14 +33,16 @@
             label1 = new Label();
             dataGridView1 = new DataGridView();
             notifyIcon1 = new NotifyIcon(components);
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(218, 103);
+            button1.Location = new Point(153, 62);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(346, 56);
+            button1.Size = new Size(242, 34);
             button1.TabIndex = 0;
             button1.Text = "click";
             button1.UseVisualStyleBackColor = true;
@@ -49,19 +51,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(349, 193);
+            label1.Location = new Point(244, 116);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 25);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 1;
             label1.Click += label1_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(28, 180);
+            dataGridView1.Location = new Point(20, 108);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(713, 225);
+            dataGridView1.Size = new Size(499, 135);
             dataGridView1.TabIndex = 2;
             // 
             // notifyIcon1
@@ -69,15 +73,27 @@
             notifyIcon1.Text = "notifyIcon1";
             notifyIcon1.Visible = true;
             // 
-            // Form1
+            // label2
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            label2.AutoSize = true;
+            label2.Location = new Point(221, 24);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Trang đăng nhập";
+            label2.Click += label2_Click;
+            // 
+            // fLogin
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
+            Controls.Add(label2);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(button1);
-            Name = "Form1";
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "fLogin";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -91,5 +107,6 @@
         private Label label1;
         private DataGridView dataGridView1;
         private NotifyIcon notifyIcon1;
+        private Label label2;
     }
 }

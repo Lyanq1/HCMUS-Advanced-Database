@@ -11,7 +11,7 @@ using System.Data;
 
 namespace WinFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class fLogin : Form
     {
         string connectString = @"Data Source = LYAN\SQLEXPRESS01;Integrated Security = True; Trust Server Certificate=True";
         SqlConnection con;
@@ -19,7 +19,7 @@ namespace WinFormsApp1
         SqlDataAdapter adt;
         DataTable dt = new DataTable();
 
-        public Form1()
+        public fLogin()
         {
             InitializeComponent();
         }
@@ -37,18 +37,23 @@ namespace WinFormsApp1
                 cmd = new SqlCommand("Select * from KHACHHANG", con);
                 adt = new SqlDataAdapter(cmd);
                 adt.Fill(dt);
-                dataGridView1.DataSource= dt;
-               
+                dataGridView1.DataSource = dt;
+
             }
-            catch (Exception ex) 
-            { 
-                 
+            catch (Exception ex)
+            {
+
             }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             label1.Text = "Hello World!";
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
