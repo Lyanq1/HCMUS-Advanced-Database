@@ -67,6 +67,12 @@ namespace WinFormsApp1
 
         }
 
-   
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            fLogin f = new fLogin();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

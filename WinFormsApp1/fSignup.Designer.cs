@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panel5 = new Panel();
+            textBox1 = new TextBox();
+            label4 = new Label();
             btnLogin = new Button();
             panel3 = new Panel();
             txbPassword = new TextBox();
@@ -38,14 +41,11 @@
             label1 = new Label();
             panel4 = new Panel();
             label3 = new Label();
-            panel5 = new Panel();
-            textBox1 = new TextBox();
-            label4 = new Label();
             panel1.SuspendLayout();
+            panel5.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
-            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -61,6 +61,33 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // panel5
+            // 
+            panel5.AccessibleName = "";
+            panel5.Controls.Add(textBox1);
+            panel5.Controls.Add(label4);
+            panel5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            panel5.Location = new Point(9, 4);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(505, 85);
+            panel5.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(141, 36);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(251, 26);
+            textBox1.TabIndex = 2;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(227, 14);
+            label4.Name = "label4";
+            label4.Size = new Size(51, 19);
+            label4.TabIndex = 1;
+            label4.Text = "Email";
+            // 
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -70,6 +97,7 @@
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Đăng ký";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // panel3
             // 
@@ -151,33 +179,6 @@
             label3.Text = "SushiX management app";
             label3.Click += label3_Click;
             // 
-            // panel5
-            // 
-            panel5.AccessibleName = "";
-            panel5.Controls.Add(textBox1);
-            panel5.Controls.Add(label4);
-            panel5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            panel5.Location = new Point(9, 4);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(505, 85);
-            panel5.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(141, 36);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(251, 26);
-            textBox1.TabIndex = 2;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(227, 14);
-            label4.Name = "label4";
-            label4.Size = new Size(51, 19);
-            label4.TabIndex = 1;
-            label4.Text = "Email";
-            // 
             // fSignup
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -190,14 +191,14 @@
             Text = "signup";
             Load += fSignup_Load;
             panel1.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
