@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WinFormsApp1
 {
     public partial class fLogin : Form
     {
-        string connectString = @"Data Source = LYAN\SQLEXPRESS01;Integrated Security = True; Trust Server Certificate=True";
+        
+        string connectString = @"Data Source = LYAN\SQLEXPRESS01;Initial Catalog = SuShiX;Integrated Security = True; Trust Server Certificate=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;
