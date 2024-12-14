@@ -39,8 +39,8 @@
             // 
             // button1
             // 
-            button1.Location = new Point(153, 62);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Location = new Point(132, 62);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(242, 34);
             button1.TabIndex = 0;
@@ -61,12 +61,13 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(20, 108);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Location = new Point(11, 100);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(499, 135);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // notifyIcon1
             // 
@@ -87,13 +88,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
+            AutoScroll = true;
+            ClientSize = new Size(515, 322);
             Controls.Add(label2);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(button1);
-            Margin = new Padding(2, 2, 2, 2);
+            KeyPreview = true;
+            Margin = new Padding(2);
             Name = "fLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
