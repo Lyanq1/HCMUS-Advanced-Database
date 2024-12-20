@@ -17,7 +17,7 @@ namespace WinFormsApp1.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = "Server=LAPTOP-AS0HAHNQ;Database=YourDatabaseName;Trusted_Connection=True;TrustServerCertificate=True;";
+        private string connectionSTR = @"Data Source = LAPTOP-AS0HAHNQ;Initial Catalog = SuShi9;Integrated Security = True; Trust Server Certificate=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -41,23 +41,29 @@ namespace WinFormsApp1.DAO
             return data;
         }
 
-        public int ExecuteNonQuery(string query, object[] parameter = null)
+        public int ExecuteNonQuery(string query, SqlParameter[] parameters = null, CommandType commandType = CommandType.Text)
         {
-            int rowsAffected = 0;
+            int result = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
-
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    AddParameters(command, parameter);
-                    rowsAffected = command.ExecuteNonQuery();
+                    command.CommandType = commandType;
+
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    result = command.ExecuteNonQuery();
                 }
             }
 
-            return rowsAffected;
+            return result;
         }
+
 
         public object ExecuteScalar(string query, object[] parameter = null)
         {
@@ -77,7 +83,7 @@ namespace WinFormsApp1.DAO
             return result;
         }
 
-        private void AddParameters(SqlCommand command, object[] parameter)
+        public void AddParameters(SqlCommand command, object[] parameter)
         {
             if (parameter == null) return;
 

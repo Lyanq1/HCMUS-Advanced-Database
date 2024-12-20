@@ -31,8 +31,8 @@ namespace WinFormsApp1
             }
         }
 
-        public static int TableWidth = 50;
-        public static int TableHeight = 50;
+        public static int TableWidth = 60;
+        public static int TableHeight = 60;
 
         private TableDAO() { }
 
