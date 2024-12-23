@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WinFormsApp1
 {
     public partial class fLogin : Form
     {
-        string connectString = @"Data Source = LYAN\SQLEXPRESS01;Integrated Security = True; Trust Server Certificate=True";
+
+        string connectString = @"Data Source = LYAN\SQLEXPRESS01;Initial Catalog = SuShiX;Integrated Security = True; Trust Server Certificate=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;
@@ -34,7 +36,7 @@ namespace WinFormsApp1
             try
             {
                 con.Open();
-                cmd = new SqlCommand("Select * from KHACHHANG", con);
+                cmd = new SqlCommand("Select * from BAN", con);
                 adt = new SqlDataAdapter(cmd);
                 adt.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -54,6 +56,14 @@ namespace WinFormsApp1
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fQuanLyThe f = new fQuanLyThe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }
