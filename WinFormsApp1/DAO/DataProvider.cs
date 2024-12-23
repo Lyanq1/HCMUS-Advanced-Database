@@ -17,7 +17,7 @@ namespace WinFormsApp1.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source = LAPTOP-AS0HAHNQ;Initial Catalog = SuShi9;Integrated Security = True; Trust Server Certificate=True";
+        private string connectionSTR = @"Data Source = LYAN\SQLEXPRESS01;Initial Catalog = SuShiX;Integrated Security = True; Trust Server Certificate=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
