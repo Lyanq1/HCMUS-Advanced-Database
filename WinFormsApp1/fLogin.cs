@@ -14,7 +14,7 @@ namespace WinFormsApp1
 {
     public partial class fLogin : Form
     {
-        
+
         string connectString = @"Data Source = LYAN\SQLEXPRESS01;Initial Catalog = SuShiX;Integrated Security = True; Trust Server Certificate=True";
         SqlConnection con;
         SqlCommand cmd;
@@ -36,7 +36,7 @@ namespace WinFormsApp1
             try
             {
                 con.Open();
-                cmd = new SqlCommand("Select * from KHACHHANG", con);
+                cmd = new SqlCommand("Select * from BAN", con);
                 adt = new SqlDataAdapter(cmd);
                 adt.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -56,6 +56,14 @@ namespace WinFormsApp1
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fQuanLyThe f = new fQuanLyThe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

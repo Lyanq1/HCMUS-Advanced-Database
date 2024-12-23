@@ -164,7 +164,7 @@
             panel4.Controls.Add(label3);
             panel4.Location = new Point(157, 12);
             panel4.Name = "panel4";
-            panel4.Size = new Size(239, 62);
+            panel4.Size = new Size(246, 62);
             panel4.TabIndex = 1;
             panel4.Paint += panel4_Paint;
             // 
