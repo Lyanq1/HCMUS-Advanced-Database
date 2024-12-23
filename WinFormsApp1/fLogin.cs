@@ -65,5 +65,14 @@ namespace WinFormsApp1
             f.ShowDialog();
             this.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            fDatBan f = new fDatBan();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+
+        }
     }
 }
