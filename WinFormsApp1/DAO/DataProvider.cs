@@ -64,6 +64,33 @@ namespace WinFormsApp1.DAO
             return result;
         }
 
+        public DataTable ExecuteStoredProcedure(string storedProcName, SqlParameter[] parameters = null)
+        {
+            DataTable data = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(storedProcName, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(data);
+                    }
+                }
+            }
+
+            return data;
+        }
+
 
         public object ExecuteScalar(string query, object[] parameter = null)
         {

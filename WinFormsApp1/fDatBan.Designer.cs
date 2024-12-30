@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flpTable = new FlowLayoutPanel();
+            Table = new FlowLayoutPanel();
             lvPhieuDat = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -50,25 +50,24 @@
             columnHeader14 = new ColumnHeader();
             columnHeader15 = new ColumnHeader();
             button2 = new Button();
+            buttonChange = new Button();
             SuspendLayout();
             // 
-            // flpTable
+            // Table
             // 
-            flpTable.Location = new Point(25, 43);
-            flpTable.Margin = new Padding(3, 4, 3, 4);
-            flpTable.Name = "flpTable";
-            flpTable.Size = new Size(429, 524);
-            flpTable.TabIndex = 5;
-            flpTable.Paint += flowLayoutPanel1_Paint;
+            Table.Location = new Point(22, 32);
+            Table.Name = "Table";
+            Table.Size = new Size(375, 393);
+            Table.TabIndex = 5;
+            Table.Paint += flowLayoutPanel1_Paint;
             // 
             // lvPhieuDat
             // 
             lvPhieuDat.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
             lvPhieuDat.GridLines = true;
-            lvPhieuDat.Location = new Point(461, 43);
-            lvPhieuDat.Margin = new Padding(3, 4, 3, 4);
+            lvPhieuDat.Location = new Point(403, 32);
             lvPhieuDat.Name = "lvPhieuDat";
-            lvPhieuDat.Size = new Size(446, 111);
+            lvPhieuDat.Size = new Size(391, 109);
             lvPhieuDat.TabIndex = 6;
             lvPhieuDat.UseCompatibleStateImageBehavior = false;
             lvPhieuDat.View = View.Details;
@@ -106,10 +105,9 @@
             // 
             lvChiTietPhieuDat.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
             lvChiTietPhieuDat.GridLines = true;
-            lvChiTietPhieuDat.Location = new Point(461, 184);
-            lvChiTietPhieuDat.Margin = new Padding(3, 4, 3, 4);
+            lvChiTietPhieuDat.Location = new Point(403, 138);
             lvChiTietPhieuDat.Name = "lvChiTietPhieuDat";
-            lvChiTietPhieuDat.Size = new Size(446, 176);
+            lvChiTietPhieuDat.Size = new Size(391, 133);
             lvChiTietPhieuDat.TabIndex = 7;
             lvChiTietPhieuDat.UseCompatibleStateImageBehavior = false;
             lvChiTietPhieuDat.View = View.Details;
@@ -141,9 +139,10 @@
             // 
             // btnThanhToan
             // 
-            btnThanhToan.Location = new Point(461, 512);
+            btnThanhToan.Location = new Point(403, 384);
+            btnThanhToan.Margin = new Padding(3, 2, 3, 2);
             btnThanhToan.Name = "btnThanhToan";
-            btnThanhToan.Size = new Size(114, 55);
+            btnThanhToan.Size = new Size(100, 41);
             btnThanhToan.TabIndex = 9;
             btnThanhToan.Text = "Thanh Toán";
             btnThanhToan.UseVisualStyleBackColor = true;
@@ -152,9 +151,10 @@
             // lvHoaDon
             // 
             lvHoaDon.Columns.AddRange(new ColumnHeader[] { columnHeader11, columnHeader12, columnHeader13, columnHeader14, columnHeader15 });
-            lvHoaDon.Location = new Point(461, 367);
+            lvHoaDon.Location = new Point(403, 275);
+            lvHoaDon.Margin = new Padding(3, 2, 3, 2);
             lvHoaDon.Name = "lvHoaDon";
-            lvHoaDon.Size = new Size(442, 121);
+            lvHoaDon.Size = new Size(391, 92);
             lvHoaDon.TabIndex = 10;
             lvHoaDon.UseCompatibleStateImageBehavior = false;
             lvHoaDon.View = View.Details;
@@ -186,27 +186,38 @@
             // 
             // button2
             // 
-            button2.Location = new Point(792, 512);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(693, 384);
             button2.Name = "button2";
-            button2.Size = new Size(109, 55);
+            button2.Size = new Size(95, 41);
             button2.TabIndex = 12;
             button2.Text = "Thoát";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // buttonChange
+            // 
+            buttonChange.Location = new Point(544, 384);
+            buttonChange.Margin = new Padding(3, 2, 3, 2);
+            buttonChange.Name = "buttonChange";
+            buttonChange.Size = new Size(100, 41);
+            buttonChange.TabIndex = 13;
+            buttonChange.Text = "Cập nhật";
+            buttonChange.UseVisualStyleBackColor = true;
+            buttonChange.Click += button1_Click_1;
+            // 
             // fDatBan
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            AutoSize = true;
+            ClientSize = new Size(800, 450);
+            Controls.Add(buttonChange);
             Controls.Add(button2);
             Controls.Add(lvHoaDon);
             Controls.Add(btnThanhToan);
             Controls.Add(lvChiTietPhieuDat);
             Controls.Add(lvPhieuDat);
-            Controls.Add(flpTable);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(Table);
             Name = "fDatBan";
             Text = "fDatBan";
             Load += fDatBan_Load;
@@ -214,7 +225,7 @@
         }
 
         #endregion
-        private FlowLayoutPanel flpTable;
+        private FlowLayoutPanel Table;
         private ListView lvPhieuDat;
         private ListView lvChiTietPhieuDat;
         private ColumnHeader columnHeader1;
@@ -236,5 +247,6 @@
         private ColumnHeader columnHeader14;
         private Button button2;
         private ColumnHeader columnHeader15;
+        private Button buttonChange;
     }
 }
