@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,14 +14,15 @@ namespace WinFormsApp1.DAO
 
         public static DataProvider Instance
         {
-            get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
-            private set { DataProvider.instance = value; }
+            get { return instance ??= new DataProvider(); }
+            private set { instance = value; }
         }
 
         private DataProvider() { }
 
         private string connectionSTR = "Data Source=LAPTOP-G7HG4LHI\\SQLEXPRESS;Initial Catalog=SuShi10;Integrated Security=True;Trust Server Certificate=True";
-        public DataTable ExcuteQuery(string query, object[] parameter = null)
+
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
 
@@ -29,63 +30,105 @@ namespace WinFormsApp1.DAO
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
-
-                if (parameter != null)
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                    AddParameters(command, parameter);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
-                        if (item.Contains("@"))
-                        {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
-                        }
+                        adapter.Fill(data);
                     }
                 }
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-                adapter.Fill(data);
-
-                connection.Close();
-
-                return data;
             }
+
+            return data;
         }
 
-        public int ExcuteNonQuery(string query, object[] parameter = null)
+        public int ExecuteNonQuery(string query, SqlParameter[] parameters = null, CommandType commandType = CommandType.Text)
         {
-            int data = 0;
+            int result = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandType = commandType;
+
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    result = command.ExecuteNonQuery();
+                }
+            }
+
+            return result;
+        }
+
+        public DataTable ExecuteStoredProcedure(string storedProcName, SqlParameter[] parameters = null)
+        {
+            DataTable data = new DataTable();
 
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
-
-                if (parameter != null)
+                using (SqlCommand command = new SqlCommand(storedProcName, connection))
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    if (parameters != null)
                     {
-                        if (item.Contains("@"))
-                        {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
-                        }
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(data);
                     }
                 }
-
-                data = command.ExecuteNonQuery();
-
-                connection.Close();
-
-                return data;
             }
 
+            return data;
+        }
+
+
+        public object ExecuteScalar(string query, object[] parameter = null)
+        {
+            object result = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    AddParameters(command, parameter);
+                    result = command.ExecuteScalar();
+                }
+            }
+
+            return result;
+        }
+
+        public void AddParameters(SqlCommand command, object[] parameter)
+        {
+            if (parameter == null) return;
+
+            // Truyền tham số theo thứ tự
+            foreach (var param in parameter)
+            {
+                if (param is SqlParameter sqlParameter)
+                {
+                    command.Parameters.Add(sqlParameter);
+                }
+                else
+                {
+                    throw new ArgumentException("All parameters must be SqlParameter objects.");
+                }
+            }
         }
     }
 }
