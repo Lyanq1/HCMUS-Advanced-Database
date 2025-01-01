@@ -1,9 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 using WinFormsApp1.DTO;
 
 namespace WinFormsApp1.DAO
@@ -14,8 +12,8 @@ namespace WinFormsApp1.DAO
 
         public static EmployeeDAO Instance
         {
-            get { if (instance == null) instance = new EmployeeDAO(); return EmployeeDAO.instance; }
-            private set { EmployeeDAO.instance = value; }
+            get { return instance ??= new EmployeeDAO(); }
+            private set { instance = value; }
         }
 
         private EmployeeDAO() { }
@@ -23,27 +21,9 @@ namespace WinFormsApp1.DAO
         public List<Employee> GetListEmployee()
         {
             List<Employee> list = new List<Employee>();
+            string query = "SELECT * FROM NhanVien";
 
-            string query = "select * from NhanVien";
-
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
-
-            foreach (DataRow item in data.Rows)
-            {
-                Employee employee = new Employee(item); 
-                list.Add(employee);
-            }
-
-            return list;    
-        }
-
-        public List<Employee> SearchEmployeeByName(string HoTen)
-        {
-            List<Employee> list = new List<Employee>();
-
-            string query = string.Format("select * from NhanVien where HoTen like N'%{0}%'", HoTen);
-
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
             {
@@ -53,58 +33,98 @@ namespace WinFormsApp1.DAO
 
             return list;
         }
-        public bool InsertEmployee(string maNhanVien, string hoTen, string ngaySinh, string gioiTinh, string ngayVaoLam, string ngayNghiViec, string boPhanPhuTrach, string chiNhanhLamViec, decimal? luong)
+
+        public List<Employee> SearchEmployeeByName(string hoTen)
         {
-            string formattedNgaySinh = string.IsNullOrEmpty(ngaySinh) ? "NULL" : $"'{DateTime.Parse(ngaySinh).ToString("yyyy-MM-dd")}'";
-            string formattedNgayVaoLam = string.IsNullOrEmpty(ngayVaoLam) ? "NULL" : $"'{DateTime.Parse(ngayVaoLam).ToString("yyyy-MM-dd")}'";
-            string formattedNgayNghiViec = string.IsNullOrEmpty(ngayNghiViec) ? "NULL" : $"'{DateTime.Parse(ngayNghiViec).ToString("yyyy-MM-dd")}'";
-            string formattedLuong = luong.HasValue ? luong.Value.ToString() : "NULL";
+            List<Employee> list = new List<Employee>();
+            string query = "SELECT * FROM NhanVien WHERE HoTen LIKE @HoTen";
 
-            string query = string.Format(
-                "INSERT INTO dbo.NhanVien (MaNhanVien, HoTen, NgaySinh, GioiTinh, NgayVaoLam, NgayNghiViec, BoPhanPhuTrach, ChiNhanhLamViec, Luong) " +
-                "VALUES (N'{0}', N'{1}', {2}, N'{3}', {4}, {5}, N'{6}', N'{7}', {8})",
-                maNhanVien, hoTen, formattedNgaySinh, gioiTinh, formattedNgayVaoLam, formattedNgayNghiViec, boPhanPhuTrach, chiNhanhLamViec, formattedLuong
-            );
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@HoTen", $"%{hoTen}%")
+            };
 
-            int result = DataProvider.Instance.ExcuteNonQuery(query);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Employee employee = new Employee(item);
+                list.Add(employee);
+            }
+
+            return list;
+        }
+
+        public bool InsertEmployee(string maNhanVien, string hoTen, string ngaySinh, string gioiTinh, decimal? luong, string ngayVaoLam, string ngayNghiViec, string boPhanPhuTrach, string chiNhanhLamViec)
+        {
+            string query = @"
+                INSERT INTO dbo.NhanVien (MaNhanVien, HoTen, NgaySinh, GioiTinh, Luong, NgayVaoLam, NgayNghiViec, BoPhanPhuTrach, ChiNhanhLamViec)
+                VALUES (@MaNhanVien, @HoTen, @NgaySinh, @GioiTinh, @Luong, @NgayVaoLam, @NgayNghiViec, @BoPhanPhuTrach, @ChiNhanhLamViec)";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaNhanVien", maNhanVien),
+                new SqlParameter("@HoTen", hoTen),
+                new SqlParameter("@NgaySinh", string.IsNullOrEmpty(ngaySinh) ? DBNull.Value : (object)DateTime.Parse(ngaySinh)),
+                new SqlParameter("@GioiTinh", gioiTinh),
+                new SqlParameter("@Luong", luong.HasValue ? (object)luong.Value : DBNull.Value),
+                new SqlParameter("@NgayVaoLam", string.IsNullOrEmpty(ngayVaoLam) ? DBNull.Value : (object)DateTime.Parse(ngayVaoLam)),
+                new SqlParameter("@NgayNghiViec", string.IsNullOrEmpty(ngayNghiViec) ? DBNull.Value : (object)DateTime.Parse(ngayNghiViec)),
+                new SqlParameter("@BoPhanPhuTrach", boPhanPhuTrach),
+                new SqlParameter("@ChiNhanhLamViec", chiNhanhLamViec)
+            };
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
 
             return result > 0;
         }
 
-        public bool UpdateEmployee(string maNhanVien, string hoTen, string ngaySinh, string gioiTinh, string ngayVaoLam, string ngayNghiViec, string boPhanPhuTrach, string chiNhanhLamViec, decimal? luong)
+        public bool UpdateEmployee(string maNhanVien, string hoTen, string ngaySinh, string gioiTinh, decimal? luong, string ngayVaoLam, string ngayNghiViec, string boPhanPhuTrach, string chiNhanhLamViec)
         {
-            string formattedNgaySinh = string.IsNullOrEmpty(ngaySinh) ? "NULL" : $"'{DateTime.Parse(ngaySinh).ToString("yyyy-MM-dd")}'";
-            string formattedNgayVaoLam = string.IsNullOrEmpty(ngayVaoLam) ? "NULL" : $"'{DateTime.Parse(ngayVaoLam).ToString("yyyy-MM-dd")}'";
-            string formattedNgayNghiViec = string.IsNullOrEmpty(ngayNghiViec) ? "NULL" : $"'{DateTime.Parse(ngayNghiViec).ToString("yyyy-MM-dd")}'";
-            string formattedLuong = luong.HasValue ? luong.Value.ToString() : "NULL";
+            string query = @"
+                UPDATE dbo.NhanVien
+                SET HoTen = @HoTen, 
+                    NgaySinh = @NgaySinh, 
+                    GioiTinh = @GioiTinh, 
+                    Luong = @Luong, 
+                    NgayVaoLam = @NgayVaoLam, 
+                    NgayNghiViec = @NgayNghiViec, 
+                    BoPhanPhuTrach = @BoPhanPhuTrach, 
+                    ChiNhanhLamViec = @ChiNhanhLamViec
+                WHERE MaNhanVien = @MaNhanVien";
 
-            string query = string.Format(
-                "UPDATE dbo.NhanVien " +
-                "SET HoTen = N'{1}', " +
-                "NgaySinh = {2}, " +
-                "GioiTinh = N'{3}', " +
-                "NgayVaoLam = {4}, " +
-                "NgayNghiViec = {5}, " +
-                "BoPhanPhuTrach = N'{6}', " +
-                "ChiNhanhLamViec = N'{7}', " +
-                "Luong = {8} " +
-                "WHERE MaNhanVien = N'{0}'",
-                maNhanVien, hoTen, formattedNgaySinh, gioiTinh, formattedNgayVaoLam, formattedNgayNghiViec, boPhanPhuTrach, chiNhanhLamViec, formattedLuong
-            );
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaNhanVien", maNhanVien),
+                new SqlParameter("@HoTen", hoTen),
+                new SqlParameter("@NgaySinh", string.IsNullOrEmpty(ngaySinh) ? DBNull.Value : (object)DateTime.Parse(ngaySinh)),
+                new SqlParameter("@GioiTinh", gioiTinh),
+                new SqlParameter("@Luong", luong.HasValue ? (object)luong.Value : DBNull.Value),
+                new SqlParameter("@NgayVaoLam", string.IsNullOrEmpty(ngayVaoLam) ? DBNull.Value : (object)DateTime.Parse(ngayVaoLam)),
+                new SqlParameter("@NgayNghiViec", string.IsNullOrEmpty(ngayNghiViec) ? DBNull.Value : (object)DateTime.Parse(ngayNghiViec)),
+                new SqlParameter("@BoPhanPhuTrach", boPhanPhuTrach),
+                new SqlParameter("@ChiNhanhLamViec", chiNhanhLamViec)
+            };
 
-            int result = DataProvider.Instance.ExcuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
 
             return result > 0;
         }
 
         public bool DeleteEmployee(string maNhanVien)
         {
-            string query = string.Format("DELETE FROM dbo.NhanVien WHERE MaNhanVien = N'{0}'", maNhanVien);
+            string query = "DELETE FROM dbo.NhanVien WHERE MaNhanVien = @MaNhanVien";
 
-            int result = DataProvider.Instance.ExcuteNonQuery(query);
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaNhanVien", maNhanVien)
+            };
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
 
             return result > 0;
         }
-
     }
 }
+
+
