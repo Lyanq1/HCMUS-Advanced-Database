@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace WinFormsApp1.DTO
 {
     public class Employee
     {
-        public Employee(string maNhanVien, string hoTen, string ngaySinh, string gioiTinh, string ngayVaoLam, string ngayNghiViec, string boPhanPhuTrach, string chiNhanhLamViec, decimal? luong)
+        public Employee(string maNhanVien, string hoTen, string ngaySinh, string gioiTinh, decimal? luong, string ngayVaoLam, string ngayNghiViec, string boPhanPhuTrach, string chiNhanhLamViec)
         {
             this.MaNhanVien = maNhanVien;
             this.HoTen = hoTen;
@@ -37,13 +37,12 @@ namespace WinFormsApp1.DTO
 
         public string MaNhanVien { get; set; }
         public string HoTen { get; set; }
-        public string NgaySinh { get; set; } 
+        public string NgaySinh { get; set; }
         public string GioiTinh { get; set; }
         public decimal? Luong { get; set; }
-        public string NgayVaoLam { get; set; } 
-        public string NgayNghiViec { get; set; } 
+        public string NgayVaoLam { get; set; }
+        public string NgayNghiViec { get; set; }
         public string BoPhanPhuTrach { get; set; }
         public string ChiNhanhLamViec { get; set; }
     }
 }
-
