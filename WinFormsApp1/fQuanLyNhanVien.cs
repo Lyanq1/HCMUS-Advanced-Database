@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +14,12 @@ namespace WinFormsApp1
     public partial class fQuanLyNhanVien : Form
     {
         BindingSource employeeList = new BindingSource();
+
         public fQuanLyNhanVien()
         {
             InitializeComponent();
-
             dtgvNhanVien.DataSource = employeeList;
             LoadListEmployee();
-
             AddEmployeeBinding();
         }
 
@@ -46,7 +44,6 @@ namespace WinFormsApp1
         List<Employee> SearchEmployeeByName(string HoTen)
         {
             List<Employee> listEmployee = EmployeeDAO.Instance.SearchEmployeeByName(HoTen);
-
             return listEmployee;
         }
 
@@ -69,7 +66,7 @@ namespace WinFormsApp1
 
             decimal? parsedLuong = string.IsNullOrWhiteSpace(luong) ? (decimal?)null : decimal.Parse(luong);
 
-            if (EmployeeDAO.Instance.InsertEmployee(maNhanVien, hoTen, ngaySinh, gioiTinh, ngayVaoLam, ngayNghiViec, boPhanPhuTrach, chiNhanhLamViec, parsedLuong))
+            if (EmployeeDAO.Instance.InsertEmployee(maNhanVien, hoTen, ngaySinh, gioiTinh, parsedLuong, ngayVaoLam, ngayNghiViec, boPhanPhuTrach, chiNhanhLamViec))
             {
                 MessageBox.Show("Thêm nhân viên thành công.");
                 LoadListEmployee();
@@ -94,7 +91,7 @@ namespace WinFormsApp1
 
             decimal? parsedLuong = string.IsNullOrWhiteSpace(luong) ? (decimal?)null : decimal.Parse(luong);
 
-            if (EmployeeDAO.Instance.UpdateEmployee(maNhanVien, hoTen, ngaySinh, gioiTinh, ngayVaoLam, ngayNghiViec, boPhanPhuTrach, chiNhanhLamViec, parsedLuong))
+            if (EmployeeDAO.Instance.UpdateEmployee(maNhanVien, hoTen, ngaySinh, gioiTinh, parsedLuong, ngayVaoLam, ngayNghiViec, boPhanPhuTrach, chiNhanhLamViec))
             {
                 MessageBox.Show("Sửa thông tin nhân viên thành công.");
                 LoadListEmployee();
