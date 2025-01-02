@@ -115,7 +115,6 @@ namespace WinFormsApp1.DAO
             return result;
         }
 
-
         public void AddParameters(SqlCommand command, object[] parameter)
         {
             if (parameter == null) return;
