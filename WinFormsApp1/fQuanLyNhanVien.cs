@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.DAO;
 using WinFormsApp1.DTO;
@@ -14,6 +11,7 @@ namespace WinFormsApp1
     public partial class fQuanLyNhanVien : Form
     {
         BindingSource employeeList = new BindingSource();
+        private List<Employee> fullEmployeeList = new List<Employee>();
 
         public fQuanLyNhanVien()
         {
@@ -25,7 +23,8 @@ namespace WinFormsApp1
 
         void LoadListEmployee()
         {
-            employeeList.DataSource = EmployeeDAO.Instance.GetListEmployee();
+            fullEmployeeList = EmployeeDAO.Instance.GetListEmployee();
+            employeeList.DataSource = fullEmployeeList;
         }
 
         void AddEmployeeBinding()
@@ -41,15 +40,15 @@ namespace WinFormsApp1
             tbSalaryNV.DataBindings.Add(new Binding("Text", dtgvNhanVien.DataSource, "Luong", true, DataSourceUpdateMode.Never));
         }
 
-        List<Employee> SearchEmployeeByName(string HoTen)
-        {
-            List<Employee> listEmployee = EmployeeDAO.Instance.SearchEmployeeByName(HoTen);
-            return listEmployee;
-        }
-
         private void btnFindNV_Click(object sender, EventArgs e)
         {
-            dtgvNhanVien.DataSource = SearchEmployeeByName(tbFindNV.Text);
+            string searchTerm = tbFindNV.Text.Trim().ToLower();
+
+            var filteredList = fullEmployeeList
+                .Where(emp => emp.HoTen.ToLower().Contains(searchTerm))
+                .ToList();
+
+            employeeList.DataSource = filteredList;
         }
 
         private void btnAddNV_Click(object sender, EventArgs e)
