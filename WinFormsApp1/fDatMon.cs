@@ -9,11 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.Data.SqlClient;
 
 namespace WinFormsApp1
 {
     public partial class fDatMon : Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source = LYAN\SQLEXPRESS01;Initial Catalog = SuShiX;Integrated Security = True; Trust Server Certificate=True");
+        SqlDataAdapter adt;
+        DataTable dt = new DataTable();
+        string latestMaPhieuDat = "";
+        string MaMon = "";
         public fDatMon()
         {
             InitializeComponent();
@@ -21,10 +27,11 @@ namespace WinFormsApp1
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {   
             textBox1.Text = dataGridView1.CurrentRow.Cells["TenMon"].Value.ToString();
             textBox2.Text = dataGridView1.CurrentRow.Cells["GiaHienTai"].Value.ToString();
             textBox3.Text = dataGridView1.CurrentRow.Cells["Ten"].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells["MaMon"].Value.ToString();
         }
 
 
@@ -68,6 +75,58 @@ namespace WinFormsApp1
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+            //Connection.Connect();
+            //con.Open();
+            //SqlCommand cmd = new SqlCommand("sp_GetLatestMaPhieuDat", con);
+            //cmd.ExecuteNonQuery();
+            //object result = cmd.ExecuteScalar();
+            //latestMaPhieuDat = result.ToString();
+            //MaMon = textBox1.Text.Trim().ToString();
+            //// Lệnh SQL để chèn dữ liệu
+
+            //string sql = "INSERT INTO ChiTietPhieuDat " +
+            //             "VALUES'" + latestMaPhieuDat + "','" + MaMon + "','" + 1 +"'";
+            //Connection.RunSQL(sql);
+            //    Connection.Disconnect();
+            Connection.Connect();
+            con.Open();
+
+            // Gọi stored procedure để lấy mã phiếu đặt mới nhất
+            SqlCommand cmd = new SqlCommand("SELECT dbo.fn_GetNextMaPhieuDat()", con);
+            object result = cmd.ExecuteScalar();
+            string latestMaPhieuDat = result.ToString();
+
+            // Lấy mã món từ textbox
+            string MaMon = textBox4.Text.Trim();
+
+            // Lệnh SQL để chèn dữ liệu vào bảng ChiTietPhieuDat
+            string sql = "INSERT INTO ChiTietPhieuDat (MaPhieuDat, MaMon, SoLuongMon) " +
+                         "VALUES (@MaPhieuDat, @MaMon, @SoLuongMon)";
+
+            // Chuẩn bị câu lệnh SQL với tham số để tránh lỗi SQL Injection
+            SqlCommand insertCmd = new SqlCommand(sql, con);
+            insertCmd.Parameters.AddWithValue("@MaPhieuDat", latestMaPhieuDat);
+            insertCmd.Parameters.AddWithValue("@MaMon", MaMon);
+            insertCmd.Parameters.AddWithValue("@SoLuongMon", 1);
+
+            // Thực thi lệnh SQL
+            insertCmd.ExecuteNonQuery();
+            MessageBox.Show($"Món đã được thêm vào ChiTietPhieuDat với mã phiếu đặt: {latestMaPhieuDat}",
+                      "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Đóng kết nối
+            con.Close();
+            Connection.Disconnect();
+
+        }
+
+        private void fDatMon_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fDatMon_Load_1(object sender, EventArgs e)
         {
 
         }

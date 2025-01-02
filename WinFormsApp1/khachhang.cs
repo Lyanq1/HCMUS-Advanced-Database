@@ -36,7 +36,10 @@ namespace WinFormsApp1
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            fChonBan_LapMa f = new fChonBan_LapMa();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

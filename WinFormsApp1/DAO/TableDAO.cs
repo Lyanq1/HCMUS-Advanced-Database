@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using WinFormsApp1.DAO;
 using WinFormsApp1.DAO.DTO;
+using Microsoft.Data.SqlClient; // Thay thế System.Data.SqlClient
 
 namespace WinFormsApp1
 {
@@ -52,5 +53,31 @@ namespace WinFormsApp1
 
             return list; // Trả về danh sách
         }
+
+        public void CapNhatTinhTrangBan(string maBan)
+        {
+            string query = "EXEC TinhTrangBan @MaBan";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+        new SqlParameter("@MaBan", maBan)
+            };
+
+            DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
+
+        public string GetMaBanByID(string maBan)
+        {
+            string query = "SELECT MaBan FROM Ban WHERE MaBan = @maBan";
+            SqlParameter param = new SqlParameter("@maBan", maBan);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { param });
+
+            if (data.Rows.Count > 0)
+            {
+                return data.Rows[0]["MaBan"].ToString();
+            }
+            return null; // Trả về null nếu không tìm thấy
+        }
+
     }
 }

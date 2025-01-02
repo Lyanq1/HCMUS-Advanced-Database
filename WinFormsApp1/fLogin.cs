@@ -104,7 +104,7 @@ namespace WinFormsApp1
 
             else if (Connection.GetFieldValues("select MaNhanVien from NHANVIEN where MaNhanVien='" + idTaiKhoan + "'") != "")
             {
-                Application.Run(new fDatBan());
+                Application.Run(new nhanvien());
             }
            
 

@@ -18,9 +18,13 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             LoadTable();
+            lvPhieuDat.SelectedIndexChanged += lvPhieuDat_SelectedIndexChanged;
         }
 
         #region Methods
+
+        private Table selectedTable;
+
 
         // Load danh sách bàn vào giao diện
         void LoadTable()
@@ -39,14 +43,14 @@ namespace WinFormsApp1
                 btn.Click += btn_click;
                 btn.Tag = item;
 
-                flpTable.Controls.Add(btn);
+                Table.Controls.Add(btn);
             }
         }
         // Sự kiện click khi chọn bàn
         void btn_click(object sender, EventArgs e)
         {
             // Lấy thông tin bàn từ nút được click
-            Table selectedTable = (sender as Button).Tag as Table;
+            selectedTable = (sender as Button).Tag as Table; 
 
             if (selectedTable != null)
             {
@@ -59,7 +63,7 @@ namespace WinFormsApp1
                 if (lvPhieuDat.Items.Count > 0)
                 {
                     string maPhieuDat = lvPhieuDat.Items[0].SubItems[0].Text; // Lấy MaPhieuDat của dòng đầu tiên
-                    ShowChiTietPhieuDat(maPhieuDat); // Hiển thị chi tiết phiếu đặt
+                    ShowChiTietPhieuDatByMaPhieu(maPhieuDat); // Hiển thị chi tiết phiếu đặt
                 }
                 else
                 {
@@ -93,14 +97,21 @@ namespace WinFormsApp1
         }
 
 
+        // Sự kiện chọn Phiếu Đặt để hiển thị Chi Tiết
+        private void lvPhieuDat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvPhieuDat.SelectedItems.Count > 0)
+            {
+                string maPhieuDat = lvPhieuDat.SelectedItems[0].SubItems[0].Text;
+                ShowChiTietPhieuDatByMaPhieu(maPhieuDat);
+            }
+        }
+
 
         // Hiển thị chi tiết Phiếu Đặt
-        void ShowChiTietPhieuDat(string maPhieuDat)
+        void ShowChiTietPhieuDatByMaPhieu(string maPhieuDat)
         {
-            // Lấy danh sách chi tiết phiếu đặt từ DAO
             List<ChiTietPhieuDat> listChiTiet = PhieuDatMonDAO.Instance.GetChiTietPhieuDatByMaPhieu(maPhieuDat);
-
-            // Xóa dữ liệu cũ trong ListView Chi Tiết
             lvChiTietPhieuDat.Items.Clear();
 
             foreach (ChiTietPhieuDat chiTiet in listChiTiet)
@@ -109,13 +120,13 @@ namespace WinFormsApp1
                 item.SubItems.Add(chiTiet.TenMon);
                 item.SubItems.Add(chiTiet.SoLuongMon.ToString());
                 item.SubItems.Add(chiTiet.GiaHienTai.ToString("N2"));
-
                 lvChiTietPhieuDat.Items.Add(item);
             }
         }
 
 
-        // Hiển thị Hóa Đơn 
+
+
         // Hiển thị Hóa Đơn 
         void ShowHoaDonByMaPhieu(string maPhieuDat)
         {
@@ -138,7 +149,7 @@ namespace WinFormsApp1
             }
         }
 
-
+        // Nút thanh toán 
         void btnThanhToan_Click(object sender, EventArgs e)
         {
             if (lvPhieuDat.SelectedItems.Count == 0)
@@ -194,12 +205,25 @@ namespace WinFormsApp1
         }
 
 
+        // Cho nut cap nhat
+        private Button FindButtonByTable(Table table)
+        {
+            foreach (Control control in Table.Controls)
+            {
+                if (control is Button btn && btn.Tag is Table t && t.MaBan == table.MaBan)
+                {
+                    return btn;
+                }
+            }
+            return null;
+        }
 
 
 
 
 
         #endregion
+
 
 
 
@@ -249,5 +273,32 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (selectedTable != null)
+            {
+                // Cập nhật tình trạng bàn trong DB
+                TableDAO.Instance.CapNhatTinhTrangBan(selectedTable.MaBan);
+
+                // Đảo ngược TinhTrang trong đối tượng selectedTable (cập nhật ngay)
+                selectedTable.TinhTrang = selectedTable.TinhTrang == 0 ? 1 : 0;
+
+                // Cập nhật giao diện của button
+                Button btn = FindButtonByTable(selectedTable);
+                if (btn != null)
+                {
+                    btn.Text = selectedTable.MaBan + Environment.NewLine + selectedTable.TinhTrang;
+                    btn.BackColor = selectedTable.TinhTrang == 0 ? Color.White : Color.Pink;
+                }
+
+                MessageBox.Show($"Đã cập nhật tình trạng bàn {selectedTable.MaBan}.");
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn bàn trước khi cập nhật.");
+            }
+        }
+
     }
 }
