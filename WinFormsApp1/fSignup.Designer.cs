@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            chkNhanVien = new CheckBox();
             panel5 = new Panel();
-            textBox1 = new TextBox();
+            username = new TextBox();
             label4 = new Label();
             btnLogin = new Button();
             panel3 = new Panel();
-            txbPassword = new TextBox();
+            confirm = new TextBox();
             label2 = new Label();
             panel2 = new Panel();
-            txbUserName = new TextBox();
+            pass = new TextBox();
             label1 = new Label();
             panel4 = new Panel();
             label3 = new Label();
@@ -51,6 +52,7 @@
             // panel1
             // 
             panel1.AccessibleName = "anh";
+            panel1.Controls.Add(chkNhanVien);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(panel3);
@@ -59,12 +61,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(535, 315);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            // 
+            // chkNhanVien
+            // 
+            chkNhanVien.AutoSize = true;
+            chkNhanVien.Location = new Point(12, 291);
+            chkNhanVien.Name = "chkNhanVien";
+            chkNhanVien.Size = new Size(82, 19);
+            chkNhanVien.TabIndex = 4;
+            chkNhanVien.Text = "checkBox1";
+            chkNhanVien.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
             panel5.AccessibleName = "";
-            panel5.Controls.Add(textBox1);
+            panel5.Controls.Add(username);
             panel5.Controls.Add(label4);
             panel5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
             panel5.Location = new Point(9, 4);
@@ -72,21 +83,21 @@
             panel5.Size = new Size(505, 85);
             panel5.TabIndex = 3;
             // 
-            // textBox1
+            // username
             // 
-            textBox1.Location = new Point(141, 36);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(251, 26);
-            textBox1.TabIndex = 2;
+            username.Location = new Point(141, 36);
+            username.Name = "username";
+            username.Size = new Size(251, 26);
+            username.TabIndex = 2;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(227, 14);
+            label4.Location = new Point(218, 14);
             label4.Name = "label4";
-            label4.Size = new Size(51, 19);
+            label4.Size = new Size(87, 19);
             label4.TabIndex = 1;
-            label4.Text = "Email";
+            label4.Text = "Username";
             // 
             // btnLogin
             // 
@@ -102,71 +113,64 @@
             // panel3
             // 
             panel3.AccessibleName = "";
-            panel3.Controls.Add(txbPassword);
+            panel3.Controls.Add(confirm);
             panel3.Controls.Add(label2);
             panel3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
             panel3.Location = new Point(12, 186);
             panel3.Name = "panel3";
             panel3.Size = new Size(505, 85);
             panel3.TabIndex = 1;
-            panel3.Paint += panel3_Paint;
             // 
-            // txbPassword
+            // confirm
             // 
-            txbPassword.Location = new Point(141, 36);
-            txbPassword.Name = "txbPassword";
-            txbPassword.Size = new Size(251, 26);
-            txbPassword.TabIndex = 2;
-            txbPassword.TextChanged += txbPassword_TextChanged;
+            confirm.Location = new Point(142, 36);
+            confirm.Name = "confirm";
+            confirm.Size = new Size(251, 26);
+            confirm.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(224, 14);
+            label2.Location = new Point(177, 14);
             label2.Name = "label2";
-            label2.Size = new Size(78, 19);
+            label2.Size = new Size(174, 19);
             label2.TabIndex = 1;
-            label2.Text = "Mật khẩu";
-            label2.Click += label2_Click;
+            label2.Text = "Confirming password";
             // 
             // panel2
             // 
             panel2.AccessibleName = "";
-            panel2.Controls.Add(txbUserName);
+            panel2.Controls.Add(pass);
             panel2.Controls.Add(label1);
             panel2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
             panel2.Location = new Point(12, 95);
             panel2.Name = "panel2";
             panel2.Size = new Size(505, 85);
             panel2.TabIndex = 0;
-            panel2.Paint += panel2_Paint;
             // 
-            // txbUserName
+            // pass
             // 
-            txbUserName.Location = new Point(141, 36);
-            txbUserName.Name = "txbUserName";
-            txbUserName.Size = new Size(251, 26);
-            txbUserName.TabIndex = 2;
-            txbUserName.TextChanged += txbUserName_TextChanged;
+            pass.Location = new Point(141, 36);
+            pass.Name = "pass";
+            pass.Size = new Size(251, 26);
+            pass.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(206, 14);
+            label1.Location = new Point(216, 14);
             label1.Name = "label1";
-            label1.Size = new Size(124, 19);
+            label1.Size = new Size(86, 19);
             label1.TabIndex = 1;
-            label1.Text = "Tên đăng nhập";
-            label1.Click += label1_Click;
+            label1.Text = "Password";
             // 
             // panel4
             // 
             panel4.Controls.Add(label3);
             panel4.Location = new Point(157, 12);
             panel4.Name = "panel4";
-            panel4.Size = new Size(239, 62);
+            panel4.Size = new Size(246, 62);
             panel4.TabIndex = 1;
-            panel4.Paint += panel4_Paint;
             // 
             // label3
             // 
@@ -177,7 +181,6 @@
             label3.Size = new Size(232, 25);
             label3.TabIndex = 2;
             label3.Text = "SushiX management app";
-            label3.Click += label3_Click;
             // 
             // fSignup
             // 
@@ -191,6 +194,7 @@
             Text = "signup";
             Load += fSignup_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel3.ResumeLayout(false);
@@ -207,15 +211,16 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private TextBox txbPassword;
+        private TextBox confirm;
         private Label label2;
-        private TextBox txbUserName;
         private Label label1;
         private Panel panel4;
         private Label label3;
         private Button btnLogin;
         private Panel panel5;
-        private TextBox textBox1;
+        private TextBox username;
         private Label label4;
+        private CheckBox chkNhanVien;
+        private TextBox pass;
     }
 }

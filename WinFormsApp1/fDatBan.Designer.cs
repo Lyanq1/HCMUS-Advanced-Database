@@ -50,6 +50,7 @@
             columnHeader14 = new ColumnHeader();
             columnHeader15 = new ColumnHeader();
             button2 = new Button();
+            buttonChange = new Button();
             SuspendLayout();
             // 
             // Table
@@ -193,12 +194,24 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // buttonChange
+            // 
+            buttonChange.Location = new Point(544, 384);
+            buttonChange.Margin = new Padding(3, 2, 3, 2);
+            buttonChange.Name = "buttonChange";
+            buttonChange.Size = new Size(100, 41);
+            buttonChange.TabIndex = 13;
+            buttonChange.Text = "Cập nhật";
+            buttonChange.UseVisualStyleBackColor = true;
+            buttonChange.Click += button1_Click_1;
+            // 
             // fDatBan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonChange);
             Controls.Add(button2);
             Controls.Add(lvHoaDon);
             Controls.Add(btnThanhToan);
@@ -234,5 +247,6 @@
         private ColumnHeader columnHeader14;
         private Button button2;
         private ColumnHeader columnHeader15;
+        private Button buttonChange;
     }
 }

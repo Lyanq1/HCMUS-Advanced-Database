@@ -48,7 +48,7 @@
             buttonChange.Name = "buttonChange";
             buttonChange.Size = new Size(100, 41);
             buttonChange.TabIndex = 14;
-            buttonChange.Text = "Cập nhật";
+            buttonChange.Text = "Đặt bàn ";
             buttonChange.UseVisualStyleBackColor = true;
             buttonChange.Click += buttonChange_Click;
             // 

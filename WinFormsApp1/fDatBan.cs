@@ -161,14 +161,6 @@ namespace WinFormsApp1
             // Lấy mã phiếu đặt
             string maPhieuDat = lvPhieuDat.SelectedItems[0].Text;
 
-            // Kiểm tra nếu đã tồn tại hóa đơn cho mã phiếu đặt
-            List<HoaDon> existingHoaDon = HoaDonDAO.Instance.GetHoaDonByMaPhieu(maPhieuDat);
-            if (existingHoaDon.Any())
-            {
-                MessageBox.Show("Phiếu Đặt này đã được tạo Hóa Đơn trước đó!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             // Lấy tổng tiền (trước giảm giá) từ ChiTietPhieuDat
             decimal thanhTien = HoaDonDAO.Instance.GetTongTienByMaPhieu(maPhieuDat);
 
