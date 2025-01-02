@@ -85,7 +85,7 @@
             // 
             textBox1.Location = new Point(7, 27);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 23);
+            textBox1.Size = new Size(240, 23);
             textBox1.TabIndex = 1;
             // 
             // label3
@@ -111,7 +111,7 @@
             textBox2.Location = new Point(7, 27);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(224, 23);
+            textBox2.Size = new Size(240, 23);
             textBox2.TabIndex = 1;
             // 
             // label4
@@ -143,7 +143,7 @@
             button4.FlatAppearance.BorderColor = Color.White;
             button4.FlatStyle = FlatStyle.Flat;
             button4.ForeColor = SystemColors.InfoText;
-            button4.Location = new Point(253, 218);
+            button4.Location = new Point(215, 218);
             button4.Name = "button4";
             button4.Size = new Size(81, 33);
             button4.TabIndex = 7;

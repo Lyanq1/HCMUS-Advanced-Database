@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -99,14 +99,20 @@ namespace WinFormsApp1
 
             if (Connection.GetFieldValues("select MaKhachHang from KHACHHANG where MaKhachHang='" + idTaiKhoan + "'") != "")
             {
+                Close();
                 Application.Run(new khachhang());
             }
 
             else if (Connection.GetFieldValues("select MaNhanVien from NHANVIEN where MaNhanVien='" + idTaiKhoan + "'") != "")
             {
+                Close();
                 Application.Run(new nhanvien());
             }
-
+            else
+            {
+                MessageBox.Show("Tài khoản không tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } 
+                
 
         }
 
