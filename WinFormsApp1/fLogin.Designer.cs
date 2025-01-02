@@ -67,7 +67,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(221, 24);
             label2.Name = "label2";
-            label2.Size = new Size(96, 15);
+            label2.Size = new Size(97, 15);
             label2.TabIndex = 3;
             label2.Text = "Trang đăng nhập";
             label2.Click += label2_Click;
