@@ -1,0 +1,118 @@
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.exe
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.deps.json
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.runtimeconfig.json
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.pdb
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfo.cs
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinForms.E4050A35.Up2Date
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinFormsApp1.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.pdb
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.genruntimeconfig.cache
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinFormsApp1.dll
+C:\Users\USER\Desktop\HCMUS-Advanced-Database-master\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fQuanLyNhanVien.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.exe
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.deps.json
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.runtimeconfig.json
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.pdb
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fQuanLyNhanVien.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.GenerateResource.cache
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfo.cs
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.sourcelink.json
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinForms.E4050A35.Up2Date
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinFormsApp1.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.pdb
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.genruntimeconfig.cache
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinFormsApp1.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fChonBan_LapMa.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fDatBan.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fDatMon.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fLapHoaDon.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.khachhang.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.nhanvien.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Properties.Resources.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll

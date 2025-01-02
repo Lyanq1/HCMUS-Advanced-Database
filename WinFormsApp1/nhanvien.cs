@@ -50,7 +50,7 @@ namespace WinFormsApp1
 
         private void label4_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien f = new QuanLyNhanVien();
+            fQuanLyNhanVien f = new fQuanLyNhanVien();
             this.Hide();
             f.ShowDialog();
             this.Show();
