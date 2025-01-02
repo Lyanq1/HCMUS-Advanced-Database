@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(nhanvien));
             groupBox1 = new GroupBox();
+            label11 = new Label();
+            label10 = new Label();
             label9 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -37,23 +39,20 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             label8 = new Label();
-            label7 = new Label();
             label6 = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
-            label10 = new Label();
-            label11 = new Label();
+            label7 = new Label();
+            label12 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.RosyBrown;
+            groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
@@ -70,6 +69,28 @@
             groupBox1.TabIndex = 138;
             groupBox1.TabStop = false;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 15F);
+            label11.Location = new Point(45, 344);
+            label11.Name = "label11";
+            label11.Size = new Size(112, 28);
+            label11.TabIndex = 8;
+            label11.Text = "Quản lý thẻ";
+            label11.Click += label11_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 15F);
+            label10.Location = new Point(45, 316);
+            label10.Name = "label10";
+            label10.Size = new Size(93, 28);
+            label10.TabIndex = 7;
+            label10.Text = "Thống kê";
+            label10.Click += label10_Click;
+            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -85,7 +106,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F);
-            label5.Location = new Point(56, 399);
+            label5.Location = new Point(14, 401);
             label5.Name = "label5";
             label5.Size = new Size(62, 28);
             label5.TabIndex = 5;
@@ -146,17 +167,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.IndianRed;
-            button1.Location = new Point(626, 115);
-            button1.Name = "button1";
-            button1.Size = new Size(167, 69);
-            button1.TabIndex = 145;
-            button1.Text = "Xem danh sách món của chi nhánh";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -167,17 +177,6 @@
             label8.Size = new Size(65, 23);
             label8.TabIndex = 144;
             label8.Text = "Địa chỉ";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.IndianRed;
-            label7.Location = new Point(242, 82);
-            label7.Name = "label7";
-            label7.Size = new Size(119, 23);
-            label7.TabIndex = 143;
-            label7.Text = "Tên chi nhánh";
             // 
             // label6
             // 
@@ -205,33 +204,27 @@
             textBox1.Size = new Size(200, 23);
             textBox1.TabIndex = 140;
             // 
-            // dataGridView1
+            // label7
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(203, 225);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(600, 224);
-            dataGridView1.TabIndex = 139;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.IndianRed;
+            label7.Location = new Point(242, 82);
+            label7.Name = "label7";
+            label7.Size = new Size(119, 23);
+            label7.TabIndex = 143;
+            label7.Text = "Tên nhân viên";
             // 
-            // label10
+            // label12
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 15F);
-            label10.Location = new Point(45, 316);
-            label10.Name = "label10";
-            label10.Size = new Size(93, 28);
-            label10.TabIndex = 7;
-            label10.Text = "Thống kê";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 15F);
-            label11.Location = new Point(45, 344);
-            label11.Name = "label11";
-            label11.Size = new Size(112, 28);
-            label11.TabIndex = 8;
-            label11.Text = "Quản lý thẻ";
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 15F);
+            label12.Location = new Point(92, 401);
+            label12.Name = "label12";
+            label12.Size = new Size(101, 28);
+            label12.TabIndex = 9;
+            label12.Text = "Đăng xuất";
+            label12.Click += label12_Click;
             // 
             // nhanvien
             // 
@@ -239,20 +232,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
-            Controls.Add(button1);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
             Name = "nhanvien";
             Text = "nhanvien";
             Load += nhanvien_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -266,15 +256,14 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
-        private Button button1;
         private Label label8;
-        private Label label7;
         private Label label6;
         private TextBox textBox2;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
         private Label label9;
         private Label label11;
         private Label label10;
+        private Label label7;
+        private Label label12;
     }
 }

@@ -41,6 +41,8 @@
             label1 = new Label();
             panel4 = new Panel();
             label3 = new Label();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             panel3.SuspendLayout();
@@ -51,6 +53,8 @@
             // panel1
             // 
             panel1.AccessibleName = "anh";
+            panel1.Controls.Add(checkBox2);
+            panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(panel3);
@@ -180,6 +184,26 @@
             label3.Text = "SushiX management app";
             label3.Click += label3_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(16, 288);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(50, 19);
+            checkBox1.TabIndex = 4;
+            checkBox1.Text = "isNV";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(72, 288);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(50, 19);
+            checkBox2.TabIndex = 5;
+            checkBox2.Text = "isKH";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
             // fSignup
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -192,6 +216,7 @@
             Text = "signup";
             Load += fSignup_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel3.ResumeLayout(false);
@@ -218,5 +243,7 @@
         private Panel panel5;
         private TextBox textBox1;
         private Label label4;
+        private CheckBox checkBox2;
+        private CheckBox checkBox1;
     }
 }

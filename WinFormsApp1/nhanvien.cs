@@ -32,11 +32,15 @@ namespace WinFormsApp1
 
         private void label5_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
+            fDatMon f = new fDatMon();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
 
         }
 
@@ -62,6 +66,28 @@ namespace WinFormsApp1
         }
 
         private void nhanvien_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            DoanhThu f = new DoanhThu();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            fQuanLyThe f = new fQuanLyThe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }

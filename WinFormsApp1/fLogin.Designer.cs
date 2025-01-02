@@ -76,7 +76,7 @@
             // 
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(84, 69);
+            panel1.Location = new Point(49, 69);
             panel1.Name = "panel1";
             panel1.Size = new Size(285, 62);
             panel1.TabIndex = 5;
@@ -101,9 +101,9 @@
             // 
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(264, 147);
+            panel2.Location = new Point(49, 137);
             panel2.Name = "panel2";
-            panel2.Size = new Size(183, 62);
+            panel2.Size = new Size(285, 62);
             panel2.TabIndex = 6;
             // 
             // textBox2
@@ -111,7 +111,7 @@
             textBox2.Location = new Point(7, 27);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(164, 23);
+            textBox2.Size = new Size(224, 23);
             textBox2.TabIndex = 1;
             // 
             // label4
@@ -129,7 +129,7 @@
             button3.FlatAppearance.BorderColor = Color.White;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = SystemColors.InfoText;
-            button3.Location = new Point(39, 251);
+            button3.Location = new Point(49, 218);
             button3.Name = "button3";
             button3.Size = new Size(81, 33);
             button3.TabIndex = 2;
@@ -143,7 +143,7 @@
             button4.FlatAppearance.BorderColor = Color.White;
             button4.FlatStyle = FlatStyle.Flat;
             button4.ForeColor = SystemColors.InfoText;
-            button4.Location = new Point(129, 251);
+            button4.Location = new Point(253, 218);
             button4.Name = "button4";
             button4.Size = new Size(81, 33);
             button4.TabIndex = 7;
@@ -166,7 +166,7 @@
             textBox3.BorderStyle = BorderStyle.None;
             textBox3.Font = new Font("Segoe UI", 15F);
             textBox3.ForeColor = SystemColors.Menu;
-            textBox3.Location = new Point(160, 11);
+            textBox3.Location = new Point(125, 11);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(117, 27);
             textBox3.TabIndex = 0;
@@ -178,7 +178,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(451, 300);
+            ClientSize = new Size(369, 276);
             Controls.Add(panel3);
             Controls.Add(button4);
             Controls.Add(button3);

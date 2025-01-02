@@ -138,9 +138,73 @@ namespace WinFormsApp1.DAO
 
             DataProvider.Instance.ExecuteNonQuery(query, parameters);
         }
+        public DataTable GetDoanhThuTheoNgay(DateTime ngay)
+        {
+            string query = "SELECT pdm.NgayLap, SUM(hd.TongTien) AS DoanhThu " +
+                           "FROM HoaDon hd " +
+                           "JOIN PhieuDatMon pdm ON hd.MaPhieu = pdm.MaPhieuDat " +
+                           "WHERE pdm.NgayLap = @Ngay " +
+                           "GROUP BY pdm.NgayLap";
+            return DataProvider.Instance.ExecuteQuery(query, new object[]
+   {
+    new SqlParameter("@Ngay", ngay.ToString("yyyy-MM-dd"))
+   });
 
 
+        }
 
+        public DataTable GetDoanhThuTheoThang(int nam, int thang)
+        {
+            string query = "SELECT YEAR(pdm.NgayLap) AS Nam, MONTH(pdm.NgayLap) AS Thang, SUM(hd.TongTien) AS DoanhThu " +
+                           "FROM HoaDon hd " +
+                           "JOIN PhieuDatMon pdm ON hd.MaPhieu = pdm.MaPhieuDat " +
+                           "WHERE YEAR(pdm.NgayLap) = @Nam AND MONTH(pdm.NgayLap) = @Thang " +
+                           "GROUP BY YEAR(pdm.NgayLap), MONTH(pdm.NgayLap)";
+            return DataProvider.Instance.ExecuteQuery(query, new object[]
+ {
+    new SqlParameter("@Nam", nam),
+    new SqlParameter("@Thang", thang)
+ });
+
+        }
+
+        public DataTable GetDoanhThuTheoQuy(int nam, int quy)
+        {
+            string query = "SELECT YEAR(pdm.NgayLap) AS Nam, DATEPART(QUARTER, pdm.NgayLap) AS Quy, SUM(hd.TongTien) AS DoanhThu " +
+                           "FROM HoaDon hd " +
+                           "JOIN PhieuDatMon pdm ON hd.MaPhieu = pdm.MaPhieuDat " +
+                           "WHERE YEAR(pdm.NgayLap) = @Nam AND DATEPART(QUARTER, pdm.NgayLap) = @Quy " +
+                           "GROUP BY YEAR(pdm.NgayLap), DATEPART(QUARTER, pdm.NgayLap)";
+            return DataProvider.Instance.ExecuteQuery(query, new object[]
+{
+    new SqlParameter("@Nam", nam),
+    new SqlParameter("@Quy", quy)
+});
+
+        }
+
+        public DataTable GetDoanhThuTheoNam(int nam)
+        {
+            string query = "SELECT YEAR(pdm.NgayLap) AS Nam, SUM(hd.TongTien) AS DoanhThu " +
+                           "FROM HoaDon hd " +
+                           "JOIN PhieuDatMon pdm ON hd.MaPhieu = pdm.MaPhieuDat " +
+                           "WHERE YEAR(pdm.NgayLap) = @Nam " +
+                           "GROUP BY YEAR(pdm.NgayLap)";
+            return DataProvider.Instance.ExecuteQuery(query, new object[]
+ {
+    new SqlParameter("@Nam", nam)
+ });
+
+        }
+
+        // Lấy danh sách năm
+        public DataTable GetNamCoDoanhThu()
+        {
+            string query = "SELECT DISTINCT YEAR(pdm.NgayLap) AS Nam " +
+                           "FROM PhieuDatMon pdm " +
+                           "ORDER BY Nam";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
 
 
     }

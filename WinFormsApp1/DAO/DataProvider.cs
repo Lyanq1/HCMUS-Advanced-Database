@@ -96,7 +96,7 @@ namespace WinFormsApp1.DAO
         }
 
 
-        public object ExecuteScalar(string query, object[] parameter = null)
+        public object ExecuteScalar(string query, object[] parameter = null, CommandType commandType = CommandType.Text)
         {
             object result = null;
 
@@ -106,6 +106,7 @@ namespace WinFormsApp1.DAO
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.CommandType = commandType;
                     AddParameters(command, parameter);
                     result = command.ExecuteScalar();
                 }
@@ -113,6 +114,7 @@ namespace WinFormsApp1.DAO
 
             return result;
         }
+
 
         public void AddParameters(SqlCommand command, object[] parameter)
         {

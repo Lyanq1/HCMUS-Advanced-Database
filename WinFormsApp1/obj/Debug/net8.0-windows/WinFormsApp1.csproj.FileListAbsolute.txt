@@ -116,3 +116,7 @@ D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\ru
 D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
 D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
 D:\visual studio community\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.DoanhThu.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fLogin.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fQuanLyThe.resources
+D:\visual studio community\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.fSignup.resources
