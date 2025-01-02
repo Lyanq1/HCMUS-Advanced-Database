@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            button1 = new Button();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
             notifyIcon1 = new NotifyIcon(components);
             label2 = new Label();
-            button2 = new Button();
             panel1 = new Panel();
             textBox1 = new TextBox();
             label3 = new Label();
@@ -45,39 +42,20 @@
             button4 = new Button();
             panel3 = new Panel();
             textBox3 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
-            // 
-            button1.Location = new Point(810, 83);
-            button1.Name = "button1";
-            button1.Size = new Size(83, 57);
-            button1.TabIndex = 0;
-            button1.Text = "click";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(349, 193);
+            label1.Location = new Point(244, 116);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 25);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 1;
             label1.Click += label1_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(644, 147);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(289, 210);
-            dataGridView1.TabIndex = 2;
             // 
             // notifyIcon1
             // 
@@ -87,49 +65,35 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(316, 40);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(221, 24);
             label2.Name = "label2";
-            label2.Size = new Size(146, 25);
+            label2.Size = new Size(96, 15);
             label2.TabIndex = 3;
             label2.Text = "Trang đăng nhập";
             label2.Click += label2_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(781, 28);
-            button2.Name = "button2";
-            button2.Size = new Size(133, 48);
-            button2.TabIndex = 4;
-            button2.Text = "Lập thẻ mới";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // panel1
             // 
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(56, 115);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Location = new Point(84, 69);
             panel1.Name = "panel1";
-            panel1.Size = new Size(261, 103);
+            panel1.Size = new Size(285, 62);
             panel1.TabIndex = 5;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(10, 45);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
+            textBox1.Location = new Point(7, 27);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(233, 31);
+            textBox1.Size = new Size(224, 23);
             textBox1.TabIndex = 1;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(10, 15);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(7, 9);
             label3.Name = "label3";
-            label3.Size = new Size(91, 25);
+            label3.Size = new Size(60, 15);
             label3.TabIndex = 0;
             label3.Text = "Username";
             // 
@@ -137,28 +101,25 @@
             // 
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(56, 253);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(264, 147);
             panel2.Name = "panel2";
-            panel2.Size = new Size(261, 103);
+            panel2.Size = new Size(183, 62);
             panel2.TabIndex = 6;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(10, 45);
-            textBox2.Margin = new Padding(4, 5, 4, 5);
+            textBox2.Location = new Point(7, 27);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(233, 31);
+            textBox2.Size = new Size(164, 23);
             textBox2.TabIndex = 1;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(10, 15);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(7, 9);
             label4.Name = "label4";
-            label4.Size = new Size(87, 25);
+            label4.Size = new Size(57, 15);
             label4.TabIndex = 0;
             label4.Text = "Password";
             // 
@@ -168,10 +129,9 @@
             button3.FlatAppearance.BorderColor = Color.White;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = SystemColors.InfoText;
-            button3.Location = new Point(56, 418);
-            button3.Margin = new Padding(4, 5, 4, 5);
+            button3.Location = new Point(39, 251);
             button3.Name = "button3";
-            button3.Size = new Size(116, 55);
+            button3.Size = new Size(81, 33);
             button3.TabIndex = 2;
             button3.Text = "Login";
             button3.UseVisualStyleBackColor = false;
@@ -183,56 +143,53 @@
             button4.FlatAppearance.BorderColor = Color.White;
             button4.FlatStyle = FlatStyle.Flat;
             button4.ForeColor = SystemColors.InfoText;
-            button4.Location = new Point(184, 418);
-            button4.Margin = new Padding(4, 5, 4, 5);
+            button4.Location = new Point(129, 251);
             button4.Name = "button4";
-            button4.Size = new Size(116, 55);
+            button4.Size = new Size(81, 33);
             button4.TabIndex = 7;
-            button4.Text = "Exit";
+            button4.Text = "Sign up";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.CornflowerBlue;
             panel3.Controls.Add(textBox3);
-            panel3.Location = new Point(0, -3);
-            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.Location = new Point(2, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(774, 80);
+            panel3.Size = new Size(553, 48);
             panel3.TabIndex = 8;
             // 
             // textBox3
             // 
             textBox3.BackColor = Color.CornflowerBlue;
             textBox3.BorderStyle = BorderStyle.None;
+            textBox3.Font = new Font("Segoe UI", 15F);
             textBox3.ForeColor = SystemColors.Menu;
-            textBox3.Location = new Point(106, 32);
-            textBox3.Margin = new Padding(4, 5, 4, 5);
+            textBox3.Location = new Point(160, 11);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(143, 24);
+            textBox3.Size = new Size(117, 27);
             textBox3.TabIndex = 0;
-            textBox3.Text = "SuShiX  app";
+            textBox3.Text = "SuShiX  App";
             textBox3.TextAlign = HorizontalAlignment.Center;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // fLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(403, 500);
+            ClientSize = new Size(451, 300);
             Controls.Add(panel3);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(button2);
             Controls.Add(label2);
-            Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Margin = new Padding(2);
             Name = "fLogin";
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -244,13 +201,9 @@
         }
 
         #endregion
-
-        private Button button1;
         private Label label1;
-        private DataGridView dataGridView1;
         private NotifyIcon notifyIcon1;
         private Label label2;
-        private Button button2;
         private Panel panel1;
         private TextBox textBox1;
         private Label label3;

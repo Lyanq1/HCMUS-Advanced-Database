@@ -38,6 +38,7 @@
             button1 = new Button();
             textBox4 = new TextBox();
             label4 = new Label();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -114,7 +115,7 @@
             // 
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.RosyBrown;
-            button1.Location = new Point(629, 86);
+            button1.Location = new Point(547, 74);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(108, 32);
@@ -142,11 +143,25 @@
             label4.TabIndex = 8;
             label4.Text = "Mã món";
             // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.RosyBrown;
+            button2.Location = new Point(681, 74);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(108, 32);
+            button2.TabIndex = 10;
+            button2.Text = "Thanh toán";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // fDatMon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(textBox4);
             Controls.Add(label4);
             Controls.Add(button1);
@@ -177,5 +192,6 @@
         private Button button1;
         private TextBox textBox4;
         private Label label4;
+        private Button button2;
     }
 }

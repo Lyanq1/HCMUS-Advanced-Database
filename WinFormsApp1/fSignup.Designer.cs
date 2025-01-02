@@ -78,15 +78,16 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(251, 26);
             textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(227, 14);
+            label4.Location = new Point(218, 14);
             label4.Name = "label4";
-            label4.Size = new Size(51, 19);
+            label4.Size = new Size(87, 19);
             label4.TabIndex = 1;
-            label4.Text = "Email";
+            label4.Text = "Username";
             // 
             // btnLogin
             // 
@@ -122,11 +123,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(224, 14);
+            label2.Location = new Point(177, 14);
             label2.Name = "label2";
-            label2.Size = new Size(78, 19);
+            label2.Size = new Size(174, 19);
             label2.TabIndex = 1;
-            label2.Text = "Mật khẩu";
+            label2.Text = "Confirming password";
             label2.Click += label2_Click;
             // 
             // panel2
@@ -152,11 +153,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(206, 14);
+            label1.Location = new Point(216, 14);
             label1.Name = "label1";
-            label1.Size = new Size(124, 19);
+            label1.Size = new Size(86, 19);
             label1.TabIndex = 1;
-            label1.Text = "Tên đăng nhập";
+            label1.Text = "Password";
             label1.Click += label1_Click;
             // 
             // panel4

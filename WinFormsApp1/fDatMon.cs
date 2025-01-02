@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using WindowsFormsApp1;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Microsoft.Data.SqlClient;
+using WinFormsApp1.DAO.DTO;
+using WinFormsApp1.DAO;
 
 namespace WinFormsApp1
 {
@@ -27,7 +29,7 @@ namespace WinFormsApp1
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {   
+        {
             textBox1.Text = dataGridView1.CurrentRow.Cells["TenMon"].Value.ToString();
             textBox2.Text = dataGridView1.CurrentRow.Cells["GiaHienTai"].Value.ToString();
             textBox3.Text = dataGridView1.CurrentRow.Cells["Ten"].Value.ToString();
@@ -129,6 +131,58 @@ namespace WinFormsApp1
         private void fDatMon_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+                try
+                {
+                    // Lấy mã phiếu đặt mới nhất
+                    string query = "SELECT dbo.fn_GetNextMaPhieuDat()";
+                    object result = DataProvider.Instance.ExecuteScalar(query);
+
+                    if (result == null)
+                    {
+                        MessageBox.Show("Không thể lấy mã phiếu đặt mới nhất.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    string maPhieuDat = result.ToString();
+
+                    // Kiểm tra nếu đã tồn tại hóa đơn cho mã phiếu đặt
+                    List<HoaDon> existingHoaDon = HoaDonDAO.Instance.GetHoaDonByMaPhieu(maPhieuDat);
+                    if (existingHoaDon.Any())
+                    {
+                        MessageBox.Show("Phiếu Đặt này đã được tạo Hóa Đơn trước đó!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Lấy tổng tiền và giảm giá
+                    decimal thanhTien = HoaDonDAO.Instance.GetTongTienByMaPhieu(maPhieuDat);
+                    decimal giamGia = HoaDonDAO.Instance.GetGiamGiaByMaPhieu(maPhieuDat);
+
+                    // Tính toán tiền
+                    decimal soTienGiam = thanhTien * giamGia / 100;
+                    decimal tongTien = thanhTien - soTienGiam;
+
+                    // Tạo mã hóa đơn mới
+                    string maxMaHoaDon = HoaDonDAO.Instance.GetMaxMaHoaDon();
+                    int nextNumber = int.Parse(maxMaHoaDon.Substring(3)) + 1;
+                    string maHoaDon = "HD_" + nextNumber;
+
+                    // Lưu hóa đơn vào database
+                    HoaDonDAO.Instance.InsertHoaDon(maHoaDon, thanhTien, soTienGiam, tongTien, maPhieuDat);
+
+                    // Thông báo thành công
+                    MessageBox.Show($"Thanh toán thành công!\nMã Hóa Đơn: {maHoaDon}\nTổng tiền: {tongTien:N2} VNĐ",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
         }
     }
 }

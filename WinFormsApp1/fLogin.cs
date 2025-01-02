@@ -82,7 +82,7 @@ namespace WinFormsApp1
             string sql = "select MATAIKHOAN from TAIKHOAN  where MATKHAU= '" + matkhau + "' and TENDANGNHAP= '" + tendangnhap + "'";
             Connection.Connect();
             idTaiKhoan = Connection.GetFieldValues(sql);
-            
+
             Connection.Disconnect();
             if (idTaiKhoan != "")
             {
@@ -106,10 +106,21 @@ namespace WinFormsApp1
             {
                 Application.Run(new nhanvien());
             }
-           
+
 
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            fSignup f = new fSignup();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
